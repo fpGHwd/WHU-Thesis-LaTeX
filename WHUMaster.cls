@@ -1,4 +1,6 @@
 ﻿% !Mode:: "TeX:UTF-8"
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{WHUMaster}[2016/04/15 4.1 Wuhan University Thesis Template for Master Candidate]
 
@@ -59,29 +61,40 @@
  \fancyfoot[C]{-\,\thepage\,-} }} 
 
 %%%=== 封面 ===%%%
-\def\maketitle{%
+\def\maketitle
+{%
   \null
   \thispagestyle{empty}%
+
   %\vspace*{-2cm}
   \begin{center}\leavevmode
-    {\fangsong \zihao{4}%
-    \begin{tabular}{lp{2cm}p{5cm}lp{2cm}l}
-      \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{分\hfill 类\hfill 号}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\fenleihao}\hfill{} &  &
-      \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{密\hfill 级}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\miji}\hfill{} & \\ \cline{2-2}\cline{5-5}
-      \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{U\hfill D\hfill C} } & {}\hfill\raisebox{-0.5ex}[0pt]{\the\UDC}\hfill{}      &  &
-      \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{编\hfill 号}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\bianhao}\hfill{}   & \\ \cline{2-2}\cline{5-5}
-    \end{tabular}
-    }
+    % {\fangsong \zihao{4}%
+    % \begin{tabular}{lp{2cm}p{5cm}lp{2cm}l}
+    %   \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{分\hfill 类\hfill 号}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\fenleihao}\hfill{} &  &
+    %   \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{密\hfill 级}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\miji}\hfill{} & \\ \cline{2-2}\cline{5-5}
+    %   \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{U\hfill D\hfill C} } & {}\hfill\raisebox{-0.5ex}[0pt]{\the\UDC}\hfill{}      &  &
+    %   \raisebox{-0.5ex}[0pt]{\makebox[1.5cm][s]{编\hfill 号}} & {}\hfill\raisebox{-0.5ex}[0pt]{\the\bianhao}\hfill{}   & \\ \cline{2-2}\cline{5-5}
+    % \end{tabular}
+    % }
     \par
-    \vspace*{15mm} %插入空白
-    {\songti \zihao{2} % 武汉大学
-    \includegraphics[width=0.4\textwidth]{wudaname.eps}
-    \\[3mm]   \ifsmd  \ziju{0.5} 硕士专业学位论文\else \ziju{1} 硕士学位论文\fi}\\
-    \vspace{2cm}
-    {\kaishu \zihao{1}  \@title \par}%
+    \vspace*{4mm} %插入空白
+    {\heiti \zihao{1} % 武汉大学
+    % \includegraphics[width=0.4\textwidth]{wudaname.eps}
+    % \\[3mm]   
+    \ifsmd  \ziju{0.5} 硕士专业学位论文\else \ziju{0} 第十二届中国研究生电子设计竞赛 \\[10mm] 技术论文\fi}\\
+    \vspace{3cm}
+    \begin{flushleft}
+      {\heiti \zihao{-2}
+        论文题目:
+      }
+    \end{flushleft}
+
+
+    {\kaishu \zihao{-2}  \@title \par}%
 %    \vspace{4cm}
+
      \vfill\vfill\vfill
-    {\songti\zihao{4}
+    {\heiti\zihao{4}
     \ifsmd 
     \begin{tabular}{cp{5.5cm}c}
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{\@author}\hfill{}} & \\[3ex]
@@ -93,29 +106,29 @@
      \end{tabular}    
     \else  
     \begin{tabular}{cp{5.5cm}c}
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{\@author}\hfill{}} & \\[3ex]
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{\the\StudentNumber}\hfill{}} & \\[3ex]
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti
+      {\heiti{}\raisebox{-3ex}[0pt]{\makebox[2.0cm][s]{参赛单位: }}} & {\heiti {}\raisebox{-3ex}[0pt]{\@author}\hfill{}} & \\[3ex]
+      {\heiti{}\raisebox{-3ex}[0pt]{\makebox[2.0cm][s]{队伍名称: }}} & {\heiti {}\raisebox{-3ex}[0pt]{\the\StudentNumber}\hfill{}} & \\[3ex]
+      {\heiti{}\raisebox{-3ex}[0pt]{\makebox[2.0cm][s]{指导老师: }}} & {\heiti
       {}\raisebox{-3ex}[0pt]{\the\Csupervisor}\hfill{}} & \\[3ex] % \cline{2-2}
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{专\hfill 业\hfill 名\hfill 称: }} & {\songti {}\raisebox{-3ex}[0pt]{\the\Cmajor}\hfill{}} &
+      {\heiti{}\raisebox{-3ex}[0pt]{\makebox[2.0cm][s]{参赛队员: }}} & {\heiti {}\raisebox{-3ex}[0pt]{\the\Cmajor}\hfill{}} &
       \\[3ex]
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 方\hfill 向: }} & {\songti{}\raisebox{-3ex}[0pt]{\the\Cspeciality}\hfill{}} & \\[3ex]
+      {\heiti{}\raisebox{-3ex}[0pt]{\makebox[2.0cm][s]{完成时间: }}} & {\heiti{}\raisebox{-3ex}[0pt]{\the\Cspeciality}\hfill{}} & \\[3ex]
      \end{tabular}
      \fi
     }
-    \par
-    \vspace{25mm}
-    {
-      {\heiti \zihao{3} \@date \par}%
-    }
+    % \par
+    % \vspace{25mm}
+    % {
+    %   {\heiti \zihao{3} \@date \par}%
+    % }
   \end{center}%
-  \null
-  \iflib
-  \else
-  \newpage
-  \thispagestyle{empty}
-  \cleardoublepage
-  \fi
+  % \null
+  % \iflib
+  % \else
+  % \newpage
+  % \thispagestyle{empty}
+  % \cleardoublepage
+  % \fi
   }
 
 %------------------------ Abstract & Keywords -------------------------
